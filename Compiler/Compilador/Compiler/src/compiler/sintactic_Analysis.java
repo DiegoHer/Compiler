@@ -27,7 +27,7 @@ private String codigo;
 private Pattern pattern;
 private Matcher matcher;
 
-    public sintactic_Analysis(Interface Interface, data data){
+    public void set_sintactic_Analysis(Interface Interface, data data){
         this.Interface = Interface;
         this.data = data;
     }
@@ -44,12 +44,14 @@ private Matcher matcher;
         
         for(int i = 0; i < 30; i ++)
         {
-            if(data.SymbolsTable[i][2].equals("1"))
-            {
-                indice = i;
-                cabecera = true;
-                break;
-            }
+            try{
+                 if(data.SymbolsTable[i][2].equals("1"))
+                    {
+                        indice = i;
+                        cabecera = true;
+                        break;
+                    }
+            }catch(NullPointerException ex){}
         }
         if(cabecera == false)//error
         {

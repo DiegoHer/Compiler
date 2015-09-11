@@ -18,13 +18,11 @@ public class Compiler {
      */
     public static void main(String[] args) {
         Interface Interface = new Interface();
-        data data = new data();
-        lexical_Analysis lA = new lexical_Analysis(Interface, data);
-        sintactic_Analysis sA = new sintactic_Analysis(Interface, data); 
-        Analysis A = new Analysis(Interface, data, lA, sA);//contructor (inicializador)
-        
-        
         Interface.setVisible(true);//mostrar ventana
+        data data = new data();
+        lexical_Analysis lA = new lexical_Analysis();
+        sintactic_Analysis sA = new sintactic_Analysis(); 
+        Analysis A = new Analysis(Interface, data, lA, sA);//contructor (inicializador)
     }
     
 }

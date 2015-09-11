@@ -38,10 +38,12 @@ public class Analysis implements ActionListener{
         }
         else
         {
-            //lA = new lexical_Analysis(Interface, data);
+            data.setData();
+            lA.set_lexical_Analysis(Interface, data);
             data.setData();
             lA.proccess();
-            //sA = new sintactic_Analysis(Interface, data);
+            
+            sA.set_sintactic_Analysis(Interface, data);
             sA.proccess();
             sA.cabeceras();
         }

@@ -14,11 +14,8 @@ import javax.swing.JOptionPane;
 public class data {
     public int row;
     public int column;
-    
-    public void setData(){//constructor
-        this.row = -1;
-        this.column = 0;
-    }
+    private final int n = 30;
+    public String [][] SymbolsTable = new String[n][3];
     
     public String dictionarySimbol[][] = {
                                            {"#","1"},
@@ -54,8 +51,19 @@ public class data {
                                            {"String","29"},
                                            {"printf","30"}
                                           };
-    private final int n = 30;
-    public String [][] SymbolsTable = new String[n][3];
+    
+    public void setData(){//constructor
+        this.row = -1;
+        this.column = 0;
+        
+        for(int i = 0; i < 30; i ++)
+        {
+            for(int j = 0; j < 3; j ++)
+            {
+                SymbolsTable[i][j] = null;
+            }
+        }
+    }
     
     public void insert_SymbolsTable(String token, String clase){
         //cada vez que entra
